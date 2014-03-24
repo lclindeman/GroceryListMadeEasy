@@ -1,0 +1,12 @@
+//= require_tree .
+//= require_self
+
+body {
+	padding-top: 100px;
+  background: image-url("handmadepaper.png") repeat;
+}
+footer { margin-top: 100px; }
+table { vertical-align: middle; border: none; border-collapse: separate; border-spacing: 20px; }
+td, th { vertical-align: middle; border: none; }
+td.item_name { vertical-align: middle; border: none; font-family: 'Shadows Into Light', cursive; font-size: 24px; }
+th { border-bottom: 1px solid #DDD; }

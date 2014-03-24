@@ -1,0 +1,41 @@
+<h1>Grocery List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Where to Find It</th>
+      <th>What to Look For</th>
+			<th>Quantity</th>
+      <th></th>
+      <th></th>
+      <!--<th></th>-->
+			<th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td class="item_name"><%= item.name %></td>
+        <td><%= item.location %></td>
+        <td><%= image_tag(item.picture_url(:thumb)) if item.picture.present? %></td>
+				<td><%= item.quantity %></td>
+        <td><%= link_to 'Details', item %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <!--<td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+				<td>
+					<% if item.marked == false %>
+						<%= link_to 'Mark as Bought', mark_item_path(item), method: :post %>
+					<% else %>
+						&#10003;
+					<% end %>
+				</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_item_path %>

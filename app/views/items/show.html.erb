@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @item.location %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@item.picture_url, :width => 100) if @item.picture.present? %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
+<% if @item.marked == false %>
+	<%= link_to 'Mark as Bought', mark_item_path(@item), method: :post %>
+<% else %>
+	&#10003;
+<% end %>
