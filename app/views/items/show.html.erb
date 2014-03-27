@@ -10,11 +10,29 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= image_tag(@item.picture_url, :width => 100) if @item.picture.present? %>
+	<% if @item.picture.present?%>
+  	<%= image_tag(@item.picture_url, :width => 100) %>
+	<% else %>
+		<em>Nothing to see here!</em>
+	<% end %>
+</p>
+
+<p>
+	<strong>Quantity:</strong>
+	<%= @item.quantity %>
+</p>
+
+<p>
+	<strong>Notes:</strong>
+	<% if @item.notes.present? %>
+		<%= @item.notes %>
+	<% else %>
+		<em>No notes here!</em>
+	<% end %>
 </p>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Back to Full List', items_path %> |
 <% if @item.marked == false %>
 	<%= link_to 'Mark as Bought', mark_item_path(@item), method: :post %>
 <% else %>

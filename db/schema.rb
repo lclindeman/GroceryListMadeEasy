@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324004643) do
+ActiveRecord::Schema.define(version: 20140324222903) do
 
   create_table "items", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140324004643) do
     t.datetime "updated_at"
     t.integer  "quantity"
     t.boolean  "marked",     default: false, null: false
+    t.text     "notes"
   end
 
 end

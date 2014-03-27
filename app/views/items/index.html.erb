@@ -1,4 +1,4 @@
-<h1>Grocery List</h1>
+<a href="https://github.com/lclindeman/GroceryListMadeEasy"><h1>Grocery List:</h1></a>
 
 <table>
   <thead>
@@ -7,10 +7,10 @@
       <th>Where to Find It</th>
       <th>What to Look For</th>
 			<th>Quantity</th>
-      <th></th>
-      <th></th>
+      <th class="actions"></th>
+      <th class="actions"></th>
       <!--<th></th>-->
-			<th></th>
+			<th class="actions"></th>
     </tr>
   </thead>
 
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
+<div class="container_add_item"><%= link_to 'Add an Item', new_item_path %></div>
