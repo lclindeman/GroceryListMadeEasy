@@ -5,11 +5,10 @@ body {
 	padding-top: 5px;
   background: image-url("handmadepaper.png") repeat;
 }
-footer { margin-top: 100px; text-align: center; color: #F20056; }
+footer { margin-top: 100px; text-align: center; }
 table { vertical-align: middle; border: none; border-collapse: separate; border-spacing: 20px; }
 td, th { vertical-align: middle; border: none; }
 td.item_name { vertical-align: middle; border: none; font-family: 'Shadows Into Light', cursive; font-size: 24px; }
 th { border-bottom: 1px solid #DDD; }
 th.actions { border-bottom: none; }
 div.container_footer { margin: auto; }
-div.container_add_item { border: 1px solid #F20056; border-radius: 10px; width: 100px; text-align: center; background-color: #Faaac6; font-weight: bold;; }

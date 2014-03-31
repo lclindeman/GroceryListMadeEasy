@@ -1,4 +1,9 @@
 GroceryListMadeEasy::Application.routes.draw do
+  devise_for :users, path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    password: 'reset'
+  }
   resources :items do
     post :mark, on: :member
   end

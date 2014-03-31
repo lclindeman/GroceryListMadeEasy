@@ -50,3 +50,5 @@ end
 gem 'pry'
 
 gem 'dentaku'
+
+gem 'devise'

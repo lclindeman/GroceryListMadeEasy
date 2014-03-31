@@ -1,4 +1,4 @@
-<a href="https://github.com/lclindeman/GroceryListMadeEasy"><h1>Grocery List:</h1></a>
+<h1>Grocery List:</h1>
 
 <table>
   <thead>
@@ -20,7 +20,7 @@
         <td class="item_name"><%= item.name %></td>
         <td><%= item.location %></td>
         <td><%= image_tag(item.picture_url(:thumb)) if item.picture.present? %></td>
-				<td><%= item.quantity %></td>
+				<td><%= item.quantity %> <%= item.unit %></td>
         <td><%= link_to 'Details', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <!--<td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
@@ -38,4 +38,6 @@
 
 <br>
 
-<div class="container_add_item"><%= link_to 'Add an Item', new_item_path %></div>
+<%= link_to 'Add an Item', new_item_path, class: "btn btn-primary" %>
+
+
