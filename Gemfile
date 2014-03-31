@@ -53,3 +53,5 @@ gem 'pry'
 gem 'dentaku'
 
 gem 'devise'
+
+gem 'rails_12factor', group: :production
