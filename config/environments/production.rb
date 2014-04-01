@@ -77,4 +77,15 @@ GroceryListMadeEasy::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  
+  CarrierWave.configure do |config|
+    config.fog_credentials = {
+      :provider               => 'AWS',
+      :aws_access_key_id      => ENV["AWS_ACCESS_KEY_ID"],
+      :aws_secret_access_key  => ENV["AWS_SECRET_ACCESS_KEY"],
+    }
+    config.fog_directory  = 'grocerylistmadeeasy'
+    config.fog_public     = true
+    config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
+  end
 end

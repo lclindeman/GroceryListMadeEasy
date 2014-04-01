@@ -9,6 +9,8 @@ gem 'pg'
 
 gem 'carrierwave'
 
+gem 'fog', '~> 1.21.0'
+
 gem 'mini_magick'
 
 # Use SCSS for stylesheets
