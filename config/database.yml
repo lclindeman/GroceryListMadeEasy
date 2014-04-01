@@ -1,15 +1,15 @@
 development:
   adapter: postgresql
-	encoding: unicode
+  encoding: unicode
   database: grocerylistmadeeasy_development
   pool: 5
   timeout: 5000
 
 test:
   adapter: postgresql
-	encoding: unicode
+  encoding: unicode
   database: grocerylistmadeeasy_test
   pool: 5
   timeout: 5000
-	
+  
 
