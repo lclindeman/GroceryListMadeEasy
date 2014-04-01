@@ -9,7 +9,7 @@
 			<th>Quantity</th>
       <th class="actions"></th>
       <th class="actions"></th>
-      <!--<th></th>-->
+      <th class="actions"></th>
 			<th class="actions"></th>
     </tr>
   </thead>
@@ -23,7 +23,7 @@
 				<td><%= item.quantity %> <%= item.unit %></td>
         <td><%= link_to 'Details', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <!--<td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				<td>
 					<% if item.marked == false %>
 						<%= link_to 'Mark as Bought', mark_item_path(item), method: :post %>

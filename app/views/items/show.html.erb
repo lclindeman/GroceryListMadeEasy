@@ -37,4 +37,5 @@
 	<%= link_to 'Mark as Bought', mark_item_path(@item), method: :post %>
 <% else %>
 	&#10003;
-<% end %>
+<% end %> |
+<%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
