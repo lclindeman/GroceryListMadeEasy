@@ -5,6 +5,8 @@ gem 'rails', '4.0.1'
 
 ruby '2.1.0'
 
+gem 'haml'
+
 gem 'pg'
 
 gem 'carrierwave'
