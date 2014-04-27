@@ -1,0 +1,36 @@
+%p
+  %strong Name:
+  = @item.name 
+
+%p
+  %strong Location:
+  = @item.location 
+
+%p
+  %strong Picture:
+  - if @item.picture.present?
+    = image_tag(@item.picture_url, :width => 100) 
+  - else 
+    %em Nothing to see here!
+
+%p
+  %strong Quantity:
+  = @item.quantity @item.unit 
+
+%p
+  %strong Notes:</strong>
+  - if @item.notes.present? 
+    = @item.notes 
+  - else 
+    %em No notes here!
+
+= link_to 'Edit', edit_item_path(@item) 
+  = "|"
+= link_to 'Back to Full List', items_path 
+  = "|"
+  - if @item.marked == false 
+    = link_to 'Mark as Bought', mark_item_path(@item), method: :post 
+  - else
+    \= &#10003
+= "|"
+= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' }
