@@ -1,43 +1,34 @@
-<h1>Grocery List:</h1>
+%h1 Grocery List:
 
-<table class="index">
-  <thead>
-    <tr>
-      <th>Item</th>
-      <th>Where to Find It</th>
-      <th>What to Look For</th>
-			<th>Quantity</th>
-      <th class="actions"></th>
-      <th class="actions"></th>
-      <th class="actions"></th>
-			<th class="actions"></th>
-    </tr>
-  </thead>
+%table.index
+  %thead
+    %tr
+      %th Item
+      %th Where to Find It
+      %th What to Look For
+      %th Quantity
+      %th.actions
+      %th.actions
+      %th.actions
+      %th.actions
 
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td class="item_name"><%= item.name %></td>
-        <td><%= item.location %></td>
-        <td><%= image_tag(item.picture_url(:thumb)) if item.picture.present? %></td>
-				<td><%= item.quantity %> <%= item.unit %></td>
-        <td><%= link_to 'Details', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-				<td>
-					<% if item.marked == false %>
-						<%= link_to 'Mark as Bought', mark_item_path(item), method: :post %>
-					<% else %>
-						&#10003;
-					<% end %>
-				</td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  %tbody
+    - @items.each do |item| 
+      %tr
+        %td.item_name= item.name
+        %td= item.location
+        %td= image_tag(item.picture_url(:thumb)) if item.picture.present? 
+        %td= item.quantity item.unit 
+        %td= link_to 'Details', item 
+        %td= link_to 'Edit', edit_item_path(item) 
+        %td= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } 
+        %td
+          - if item.marked == false 
+            = link_to 'Mark as Bought', mark_item_path(item), method: :post
+          - else 
+            \= &#10003
+						
 
-<br>
-
-<%= link_to 'Add an Item', new_item_path, class: "btn btn-primary" %>
+= link_to 'Add an Item', new_item_path, class: "btn btn-primary"
 
 

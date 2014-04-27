@@ -70,6 +70,8 @@ GEM
     fog-json (1.0.0)
       multi_json (~> 1.0)
     formatador (0.2.4)
+    haml (4.0.5)
+      tilt
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -170,6 +172,7 @@ DEPENDENCIES
   dentaku
   devise
   fog (~> 1.21.0)
+  haml
   jbuilder (~> 1.2)
   jquery-rails
   mini_magick
