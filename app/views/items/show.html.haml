@@ -15,7 +15,8 @@
 
 %p
   %strong Quantity:
-  = @item.quantity @item.unit 
+  = @item.quantity 
+  = @item.unit 
 
 %p
   %strong Notes:</strong>
@@ -24,13 +25,13 @@
   - else 
     %em No notes here!
 
-= link_to 'Edit', edit_item_path(@item) 
-  = "|"
-= link_to 'Back to Full List', items_path 
-  = "|"
-  - if @item.marked == false 
-    = link_to 'Mark as Bought', mark_item_path(@item), method: :post 
-  - else
-    \= &#10003
+= link_to 'Edit', edit_item_path(@item)
 = "|"
-= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' }
+= link_to 'Back to Full List', items_path
+= "|"
+- if @item.marked == false
+  = link_to 'Mark as Bought', mark_item_path(@item), method: :post
+- else
+  &#10003
+= "|"
+= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } 

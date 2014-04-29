@@ -18,7 +18,9 @@
         %td.item_name= item.name
         %td= item.location
         %td= image_tag(item.picture_url(:thumb)) if item.picture.present? 
-        %td= item.quantity item.unit 
+        %td
+          = item.quantity
+          = item.unit
         %td= link_to 'Details', item 
         %td= link_to 'Edit', edit_item_path(item) 
         %td= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } 
@@ -26,7 +28,7 @@
           - if item.marked == false 
             = link_to 'Mark as Bought', mark_item_path(item), method: :post
           - else 
-            \= &#10003
+            &#10003
 						
 
 = link_to 'Add an Item', new_item_path, class: "btn btn-primary"
